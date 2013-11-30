@@ -1,0 +1,159 @@
+#head {
+	width: 400px;
+	height: 30px;
+}
+
+#head ul {
+	padding: 0;
+	margin: 0;
+}
+
+#head ul li {
+	list-style: none;
+	float: left;
+	text-decoration: none;
+	display: block;
+	width: 80px;
+	padding: 5px;
+	margin: 0px 10px 0px 0px;
+	position: relative;
+}
+
+#head ul li a {
+	text-decoration: none;
+	color: #000000;
+}
+
+#head ul li a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+
+#L1 {
+	background-color: #9CC;
+	border-top-color: #F6C;
+	border-right-color: #F6C;
+	border-left-color: #F6C;
+}
+
+#L2 {
+	background-color: #CC9;
+	border-color: #309;
+	margin-left: 1px;
+}
+
+#L3 {
+	background-color: #FF3;
+	border-color: #360;
+}
+
+#L4 {
+	background-color: #690;
+	border-color: #360;
+}
+
+#d1 {
+	background-color: #9CC;
+	border: 1px solid #C39;
+	width: 1000px;
+	height: 400px;
+	margin-top: 0px;
+	position: absolute;
+	z-index: 1;
+}
+
+#d2 {
+	background-color: #CC9;
+	border: 1px solid #309;
+	display: none;
+	width: 1000px;
+	height: 400px;
+	margin-top: 0px;
+	position: absolute;
+	z-index: 1;
+}
+
+#d3 {
+	background-color: #FF3;
+	border: 1px solid #360;
+	display: none;
+	width: 1000px;
+	height: 400px;
+	margin-top: 0px;
+	position: absolute;
+	z-index: 1;
+}
+
+#d4 {
+	background-color: #690;
+	border: 1px solid #360;
+	display: none;
+	width: 1000px;
+	position: absolute;
+	height: 400px;
+	margin-top: 0px;
+	z-index: 1;
+}
+
+#TiMu {
+	font-family: "ºÚÌå";
+	font-size: 30px;
+	width: 200px;
+	height:40px;
+	font-weight: bolder;
+	bottom: 9px;
+	position: absolute;
+	left: 200px;
+}
+
+img {
+	width:70px;
+	height:70px;
+	
+}
+
+.firstline {
+	position: relative;
+	height: 70px;
+}
+
+.pic {
+	position:absolute;
+	left: 100px;
+}
+
+.Re_Lo {
+	position:absolute;
+	right:100px;
+	bottom: 3px;
+}
+
+.box {
+	left: 200px;
+	position: absolute;
+	width: 1000px;
+}
+
+.bot {
+	left: 550px;
+	position: absolute;
+	bottom: 10px;
+}
+
+
+.question {
+    left: 200px;
+    position: absolute;
+    top: 50px;
+}
+
+#Firm_Name {
+	font-size: 20px;
+	font-family: serif;
+}
+
+.box_company {
+	border: 2px;
+	width: 600px;
+	height: auto;
+}
