@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="JSPTest"
+  id="myeclipse.1385294894922"
+  context-root="/JSPTest"
+  j2ee-spec="6.0"
+  archive="JSPTest.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
