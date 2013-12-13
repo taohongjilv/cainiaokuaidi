@@ -7,33 +7,39 @@
 </head>
 
 <script language="javascript">
-
-var lastMouseDownButtonId = null;
-
-
-function setLucencyBackgroud(x)
+var Flag = 0;
+function getFocus(comNum)
 {
-	if (lastMouseDownButtonId != x)
-	document.getElementById(x).style.background = "none";
-}
-
-function setLightBackground(x)
-{
-    if (lastMouseDownButtonId != x)
-	document.getElementById(x).style.background = "#95E0EF";
-}
-
-function setBlueBackground(x)
-{
-	document.getElementById(x).style.background = "#0fcdf6";
-	
-	if (lastMouseDownButtonId != null)
+	var i;
+	for (i = 1; i < 56; i++)
 	{
-    	document.getElementById(lastMouseDownButtonId).style.background = "none";
-	}
+		if (i == comNum)
+		{
+			document.getElementById("comId" + i).style.background = "#95E0EF";
+		}
+		else if (i == Flag)
+		{
+			document.getElementById("comId" + i).style.background = "#0fcdf6";
+		}
+		else
+		{
 			
-	lastMouseDownButtonId = x;
-	document.getElementById("company").setAttribute("value", x);
+			document.getElementById("comId" + i).style.background = "none";
+		}
+	}
+}
+
+function getButton(comNum)
+{
+	var j;
+	for (j = 1; j < 56; j++)
+	{
+		if (j == comNum)
+		{
+			document.getElementById("comId" + j).style.background = "#0fcdf6";
+			Flag = j;
+		}
+	}
 }
 	
 </script>
@@ -76,12 +82,7 @@ function setBlueBackground(x)
       <h2>快递查询</h2>
       <div class="clr"></div>
     </div>
-	<script type="text/javascript"> 
-		thisURL = document.URL; 
-		strwrite = "<img src='https://chart.googleapis.com/chart?cht=qr&chs=150x150&choe=UTF-8&chld=L|4&chl=" + thisURL + "' width='150' height='150' alt='网址URL 二维码生成' style='position: absolute; top: 322px; right: 8px;'/>";
-		document.write( strwrite ); 
-	
-</script>
+	<img alt="网址URL 二维码生成" src="images/inquire2WEI.jpg" style="position: absolute; top: 322px; right: 8px;"/>
   </div>
   <div class="top_bg2">
    <div class="clr"></div>
@@ -92,13 +93,12 @@ function setBlueBackground(x)
 	
 	
 	<div class="form_content">
-    <form id="test" action="courierResult.jsp" method="post">
+    <form id="test" action="#" method="get">
     <fieldset>
         <legend>我的快递</legend>
         <div class="form-row"  onMouseOver="getFocus(99)">
             <div class="field-label"><label for="field1">请输入单号</label>:</div>
-            <div class="field-label"><input name="courier" id="field1" class="required"  /></div>
-			<div style="display:none"> <input name="company" id="company" />  </div>
+            <div class="field-label"><input name="field1" id="field1" class="required"  /></div>
 			
 			<div class="field-widge-submit"><input type="submit" class="submit" value="提交查询" /></div>
 			
@@ -112,31 +112,31 @@ function setBlueBackground(x)
 		  <label>请选择下方快递公司： </label> </div>
 		
 		<div class="clr"> </div>
-		<div class="a-company-icon" id="ems" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"> <img src="images/shunfengicon.png" width="24" height="24" />  <p> <label> EMS </label>  </p></div>
+		<div class="a-company-icon" id="comId1" onMouseDown="getButton(1)" onMouseOver="getFocus(1)" > <img src="images/shunfengicon.png" width="24" height="24" />  <p> <label> EMS </label>  </p></div>
 		
-		<div class="a-company-icon" id="shentong"  onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)" ><img src="images/yuantongicon.png" width="29" height="27" />
+		<div class="a-company-icon" id="comId2" onMouseOver="getFocus(2)" onMouseDown="getButton(2)" ><img src="images/yuantongicon.png" width="29" height="27" />
 		  <p> <label>申通 </label>  </p></div>
 		  
-		  <div class="a-company-icon" id="zhongtong"  onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"><img src="images/zhongtongicon.png" width="28" height="27" />
+		  <div class="a-company-icon" id="comId3" onMouseOver="getFocus(3)" onMouseDown="getButton(3)"><img src="images/zhongtongicon.png" width="28" height="27" />
 		    <p> <label>中通 </label>  </p></div>
-		  <div class="a-company-icon" id="yunda"  onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"><img src="images/yundaicon.png" width="25" height="26" />
+		  <div class="a-company-icon" id="comId4" onMouseOver="getFocus(4)" onMouseDown="getButton(4)"><img src="images/yundaicon.png" width="25" height="26" />
 		    <p> <label>韵达</label>  </p></div>
-		  <div class="a-company-icon" id="zhaijisong"  onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"><img src="images/zhaijisongicon.png" width="28" height="24" />
+		  <div class="a-company-icon" id="comId5" onMouseOver="getFocus(5)" onMouseDown="getButton(5)"><img src="images/zhaijisongicon.png" width="28" height="24" />
 		    <p> <label>宅急送</label>  </p></div>
-		  <div class="a-company-icon" id="youzhengbaoguo"  onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"><img src="images/youzhengbaoguoicon.png" width="25" height="28" />
+		  <div class="a-company-icon" id="comId6" onMouseOver="getFocus(6)" onMouseDown="getButton(6)"><img src="images/youzhengbaoguoicon.png" width="25" height="28" />
 		    <p> <label> 邮政包裹 </label>  </p></div><div class="clr">  </div>
 		  
-		    <div class="a-company-icon" id="shunfeng" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  <img src="images/shunfeng1icon.png" width="26" height="32" />
+		    <div class="a-company-icon" id="comId7" onMouseOver="getFocus(7)" onMouseDown="getButton(7)"><img src="images/shunfeng1icon.png" width="26" height="32" />
 		      <p> <label> 顺丰 </label>  </p></div>
-		    <div class="a-company-icon" id="yuantong" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"><img src="images/yuantong1icon.png" width="26" height="27" />
+		    <div class="a-company-icon" id="comId8" onMouseOver="getFocus(8)" onMouseDown="getButton(8)"><img src="images/yuantong1icon.png" width="26" height="27" />
 		      <p> <label> 圆通 </label>  </p></div>
-		    <div class="a-company-icon" id="huitong"  onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"><img src="images/huitongicon.png" width="27" height="26" />
+		    <div class="a-company-icon" id="comId9" onMouseOver="getFocus(9)" onMouseDown="getButton(9)"><img src="images/huitongicon.png" width="27" height="26" />
 		      <p> <label>汇通</label>  </p></div>
-		    <div class="a-company-icon" id="tiantian"  onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"><img src="images/tiantianicon.png" width="27" height="26" />
+		    <div class="a-company-icon" id="comId10" onMouseOver="getFocus(10)" onMouseDown="getButton(10)"><img src="images/tiantianicon.png" width="27" height="26" />
 		      <p> <label>天天</label>  </p></div>
-		    <div class="a-company-icon" id="quanfeng"  onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"><img src="images/quanfengicon.png" width="27" height="27" />
+		    <div class="a-company-icon" id="comId11" onMouseOver="getFocus(11)" onMouseDown="getButton(11)"><img src="images/quanfengicon.png" width="27" height="27" />
 		      <p> <label>全峰</label>  </p></div>
-		    <div class="a-company-icon" id="fankepeisong"  onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"><img src="images/fankeicon.png" width="29" height="26" />
+		    <div class="a-company-icon" id="comId12" onMouseOver="getFocus(12)" onMouseDown="getButton(12)"><img src="images/fankeicon.png" width="29" height="26" />
 		      <p> <label>凡客配送</label>
 		      </p></div>
 		    <div class="clr">  </div>
@@ -147,8 +147,8 @@ function setBlueBackground(x)
 			 <div class="a-company-in-left" > 
 			 	 <span> <label> <strong> B :  </strong> </label> 
 				 <div class="company-label" > 
-			     <label id="comId13"  onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  包邮平邮</label> </div>
-				 <div class="company-label" > <label id="comId44"  onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"> 邦送物流</label> </div>
+			     <label id="comId13" onMouseOver="getFocus(13)" onMouseDown="getButton(13)">  包邮平邮</label> </div>
+				 <div class="company-label" > <label id="comId44" onMouseOver="getFocus(44)" onMouseDown="getButton(44)"> 邦送物流</label> </div>
 				</span>
 				 
 			 </div> 
@@ -158,9 +158,9 @@ function setBlueBackground(x)
 			 <div class="a-company-in-left1" >
 			   <span> <label> <strong> D :  </strong> </label> 
 				 <div class="company-label" > 
-			     <label id="comId14"  onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  DHL</label> </div>
-				 <div class="company-label" > <label id="comId29"  onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"> 德邦物流</label> </div>
-				<div class="company-label" >  <label id="comId45"onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">   递四方</label>  </div></span>
+			     <label id="comId14" onMouseOver="getFocus(14)" onMouseDown="getButton(14)">  DHL</label> </div>
+				 <div class="company-label" > <label id="comId29" onMouseOver="getFocus(29)" onMouseDown="getButton(29)"> 德邦物流</label> </div>
+				<div class="company-label" >  <label id="comId45" onMouseOver="getFocus(45)" onMouseDown="getButton(45)">   递四方</label>  </div></span>
 			 </div> 
 			 
 			 <div class="clr"> </div>
@@ -169,26 +169,26 @@ function setBlueBackground(x)
 			 <div class="a-company-in-left" > 
 			 	 <span> <label> <strong> E :  </strong> </label> 
 				 <div class="company-label" > 
-			     <label id="comId15" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">E邮宝</label> </div>
-				 <div class="company-label" > <label id="comId30" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">EMS国际</label> </div>
+			     <label id="comId15" onMouseOver="getFocus(15)" onMouseDown="getButton(15)">E邮宝</label> </div>
+				 <div class="company-label" > <label id="comId30" onMouseOver="getFocus(30)" onMouseDown="getButton(30)">EMS国际</label> </div>
 				 </span> </div>
 			 <div class="clr"> </div>
 			 
 			 <div class="a-company-in-left1" >
 			   <span> <label> <strong> F :  </strong> </label> 
 				 <div class="company-label" > 
-			     <label id="comId16" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">FesEx</label> </div>
-				 <div class="company-label" > <label id="comId31" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">飞豹快递</label> </div>
-				<div class="company-label" >  <label id="comId46" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  飞康达</label>  
+			     <label id="comId16" onMouseOver="getFocus(16)" onMouseDown="getButton(16)">FesEx</label> </div>
+				 <div class="company-label" > <label id="comId31" onMouseOver="getFocus(31)" onMouseDown="getButton(31)">飞豹快递</label> </div>
+				<div class="company-label" >  <label id="comId46" onMouseOver="getFocus(46)" onMouseDown="getButton(46)">  飞康达</label>  
 				</div></span>
 			 </div>
 			 
 			 <div class="a-company-in-left" > 
 			 	 <span> <label> <strong> G :  </strong> </label> 
 				 <div class="company-label" > 
-			     <label id="comId17" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  挂号信</label> </div>
-				 <div class="company-label" > <label id="comId32" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">国通快递</label> </div>
-				<div class="company-label" >  <label id="comId47" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  能达速递</label>  </div>
+			     <label id="comId17" onMouseOver="getFocus(17)" onMouseDown="getButton(17)">  挂号信</label> </div>
+				 <div class="company-label" > <label id="comId32" onMouseOver="getFocus(32)" onMouseDown="getButton(32)">国通快递</label> </div>
+				<div class="company-label" >  <label id="comId47" onMouseOver="getFocus(47)" onMouseDown="getButton(47)">  能达速递</label>  </div>
 			 	 </span>
 				 
 			 </div> 
@@ -198,9 +198,9 @@ function setBlueBackground(x)
 			 <div class="a-company-in-left1" >
 			   <span> <label> <strong> H :  </strong> </label> 
 				 <div class="company-label" > 
-			     <label id="comId18" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">汇通快运</label> </div>
-				 <div class="company-label" > <label id="comId33" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">华企快运</label> </div>
-				<div class="company-label" >  <label id="comId48" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  汇强快递</label>  </div></span>
+			     <label id="comId18" onMouseOver="getFocus(18)" onMouseDown="getButton(18)">汇通快运</label> </div>
+				 <div class="company-label" > <label id="comId33" onMouseOver="getFocus(33)" onMouseDown="getButton(33)">华企快运</label> </div>
+				<div class="company-label" >  <label id="comId48" onMouseOver="getFocus(48)" onMouseDown="getButton(48)">  汇强快递</label>  </div></span>
 			 </div> 
 			 
 			 <div class="clr"> </div>
@@ -209,9 +209,9 @@ function setBlueBackground(x)
 			 <div class="a-company-in-left" > 
 			 	 <span> <label> <strong> J :  </strong> </label> 
 				 <div class="company-label" > 
-			     <label id="comId19" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  佳吉快运</label> </div>
-				 <div class="company-label" > <label onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"> 嘉里大通</label> </div>
-				<div class="company-label" >  <label id="comId49" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  急先达</label>  </div></span>
+			     <label id="comId19" onMouseOver="getFocus(19)" onMouseDown="getButton(19)">  佳吉快运</label> </div>
+				 <div class="company-label" > <label id="comId34" onMouseOver="getFocus(34)" onMouseDown="getButton(34)"> 嘉里大通</label> </div>
+				<div class="company-label" >  <label id="comId49" onMouseOver="getFocus(49)" onMouseDown="getButton(49)">  急先达</label>  </div></span>
 				 
 			 </div> 
 			 
@@ -220,8 +220,8 @@ function setBlueBackground(x)
 			 <div class="a-company-in-left1" >
 			   <span> <label> <strong> K :  </strong> </label> 
 				 <div class="company-label" > 
-			     <label id="comId20" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">快捷速递</label> </div>
-				 <div class="company-label" > <label id="comId35" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"> 跨越速递</label> </div>
+			     <label id="comId20" onMouseOver="getFocus(20)" onMouseDown="getButton(20)">快捷速递</label> </div>
+				 <div class="company-label" > <label id="comId35" onMouseOver="getFocus(35)" onMouseDown="getButton(35)"> 跨越速递</label> </div>
 				</span> </div>
 			</div>
 			
@@ -233,9 +233,9 @@ function setBlueBackground(x)
 			<div class="a-company-in-left" > 
 			 	 <span> <label> <strong> L :  </strong> </label> 
 				 <div class="company-label" > 
-			     <label id="comId21" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  邦联快递</label> </div>
-				 <div class="company-label" > <label id="comId36" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"> 联昊通</label> </div>
-				<div class="company-label" >  <label id="comId50" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">   包邮平邮</label>  </div></span>
+			     <label id="comId21" onMouseOver="getFocus(21)" onMouseDown="getButton(21)">  邦联快递</label> </div>
+				 <div class="company-label" > <label id="comId36" onMouseOver="getFocus(36)" onMouseDown="getButton(36)"> 联昊通</label> </div>
+				<div class="company-label" >  <label id="comId50" onMouseOver="getFocus(50)" onMouseDown="getButton(50)">   包邮平邮</label>  </div></span>
 				 
 			 </div> 
 			 <div class="clr"> </div>
@@ -244,9 +244,9 @@ function setBlueBackground(x)
 			 <div class="a-company-in-left1" >
 			   <span> <label> <strong> Q :  </strong> </label> 
 				 <div class="company-label" > 
-			     <label id="comId22" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">全峰快递</label> </div>
-				 <div class="company-label" > <label id="comId37" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"> 全晨快递</label> </div>
-				<div class="company-label" >  <label id="comId51" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">   全一快递</label>  </div></span>
+			     <label id="comId22" onMouseOver="getFocus(22)" onMouseDown="getButton(22)">全峰快递</label> </div>
+				 <div class="company-label" > <label id="comId37" onMouseOver="getFocus(37)" onMouseDown="getButton(37)"> 全晨快递</label> </div>
+				<div class="company-label" >  <label id="comId51" onMouseOver="getFocus(51)" onMouseDown="getButton(51)">   全一快递</label>  </div></span>
 			 </div> 
 			 
 			 <div class="clr"> </div>
@@ -255,23 +255,23 @@ function setBlueBackground(x)
 			 <div class="a-company-in-left" > 
 			 	 <span> <label> <strong> S :  </strong> </label> 
 				 <div class="company-label" > 
-			     <label id="comId23" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  速尔快递</label> </div>
-				 <div class="company-label" > <label id="comId38" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"> 尚橙物流</label> </div>
+			     <label id="comId23" onMouseOver="getFocus(23)" onMouseDown="getButton(23)">  速尔快递</label> </div>
+				 <div class="company-label" > <label id="comId38" onMouseOver="getFocus(38)" onMouseDown="getButton(38)"> 尚橙物流</label> </div>
 				 </span> </div>
 			 <div class="clr"> </div>
 			 
 			 <div class="a-company-in-left1" >
 			   <span> <label> <strong> T :  </strong> </label> 
 				 <div class="company-label" > 
-			     <label id="comId24" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  TNT</label> </div>
-				 <div class="company-label" > <label id="comId39" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"> 天地华宇</label> </div>
+			     <label id="comId24" onMouseOver="getFocus(24)" onMouseDown="getButton(24)">  TNT</label> </div>
+				 <div class="company-label" > <label id="comId39" onMouseOver="getFocus(39)" onMouseDown="getButton(39)"> 天地华宇</label> </div>
 				</span> </div>
 			 <div class="a-company-in-left" > 
 			 	 <span> <label> <strong> U :  </strong> </label> 
 				 <div class="company-label" > 
-			     <label id="comId25" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  USPS</label> </div>
-				 <div class="company-label" > <label id="comId40" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"> UPS</label> </div>
-				<div class="company-label" >  <label id="comId52" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">   优速物流</label>  </div></span>
+			     <label id="comId25" onMouseOver="getFocus(25)" onMouseDown="getButton(25)">  USPS</label> </div>
+				 <div class="company-label" > <label id="comId40" onMouseOver="getFocus(40)" onMouseDown="getButton(40)"> UPS</label> </div>
+				<div class="company-label" >  <label id="comId52" onMouseOver="getFocus(52)" onMouseDown="getButton(52)">   优速物流</label>  </div></span>
 				 
 			 </div> 
 			 <div class="clr"> </div>
@@ -280,9 +280,9 @@ function setBlueBackground(x)
 			 <div class="a-company-in-left1" >
 			   <span> <label> <strong> X :  </strong> </label> 
 				 <div class="company-label" > 
-			     <label id="comId26" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  新邦物流</label> </div>
-				 <div class="company-label" > <label id="comId41" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"> 信丰物流</label> </div>
-				<div class="company-label" >  <label id="comId53" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  新蛋物流</label>  </div></span>
+			     <label id="comId26" onMouseOver="getFocus(26)" onMouseDown="getButton(26)">  新邦物流</label> </div>
+				 <div class="company-label" > <label id="comId41" onMouseOver="getFocus(41)" onMouseDown="getButton(41)"> 信丰物流</label> </div>
+				<div class="company-label" >  <label id="comId53" onMouseOver="getFocus(53)" onMouseDown="getButton(53)">  新蛋物流</label>  </div></span>
 			 </div> 
 			 
 			 <div class="clr"> </div>
@@ -291,9 +291,9 @@ function setBlueBackground(x)
 			 <div class="a-company-in-left" > 
 			 	 <span> <label> <strong> Y :  </strong> </label> 
 				 <div class="company-label" > 
-			     <label id="comId27" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  邮政国内</label> </div>
-				 <div class="company-label" > <label id="comId42" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"> 邮政国际</label> </div>
-				<div class="company-label" >  <label id="comId54" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">   银捷速递</label>  </div></span>
+			     <label id="comId27" onMouseOver="getFocus(27)" onMouseDown="getButton(27)">  邮政国内</label> </div>
+				 <div class="company-label" > <label id="comId42" onMouseOver="getFocus(42)" onMouseDown="getButton(42)"> 邮政国际</label> </div>
+				<div class="company-label" >  <label id="comId54" onMouseOver="getFocus(54)" onMouseDown="getButton(54)">   银捷速递</label>  </div></span>
 				 
 			 </div> 
 			 
@@ -302,9 +302,9 @@ function setBlueBackground(x)
 			 <div class="a-company-in-left1" >
 			   <span> <label> <strong> Z :  </strong> </label> 
 				 <div class="company-label" > 
-			     <label id="comId28" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  中邮物流</label> </div>
-				 <div class="company-label" > <label id="comId43" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"> 中铁物流</label> </div>
-				<div class="company-label" >  <label id="comId55" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">   中铁快运</label>  </div></span>
+			     <label id="comId28" onMouseOver="getFocus(28)" onMouseDown="getButton(28)">  中邮物流</label> </div>
+				 <div class="company-label" > <label id="comId43" onMouseOver="getFocus(43)" onMouseDown="getButton(43)"> 中铁物流</label> </div>
+				<div class="company-label" >  <label id="comId55" onMouseOver="getFocus(55)" onMouseDown="getButton(55)">   中铁快运</label>  </div></span>
 			 </div></div>
 			
 			</div>

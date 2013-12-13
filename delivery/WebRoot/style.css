@@ -199,7 +199,7 @@ padding:10px 5px 5px 5px;
 }
 
 .field-label {
-width:150px;
+width:100px;
 float:left;
 line-height:25px;
 }
@@ -239,9 +239,11 @@ label.message {
 input.submit{
 color:#FFFFFF;
 background-color:#0fcdf6;
-padding:2px 5px 2px 5px;
+padding:6px 12px;
 cursor:pointer;
 border:none;
+position: absolute;
+right: 480px;
 }
 
 
@@ -337,7 +339,8 @@ font-size:18px;
 }
 .field-widge-submit {
 	float: right;
-	padding: 0 15px 0 0;
+	padding: 0 60px 0 0;
+	width: 35px;
 }
 .select-address {
 	float: none;
@@ -426,4 +429,15 @@ float:left;
 }
 .a-record {
 	height: auto;
+}
+
+#myDelivery{
+	background-color: #0FCDF6;
+    border: medium none;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 6px 18px 8px;
+    position: absolute;
+    right: 343px;
 }

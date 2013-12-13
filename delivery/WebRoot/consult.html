@@ -49,7 +49,7 @@ function getButton(comNum)
 <div class="main">
   <div class="header">
     <div class="block_header">
-      <div class="logo"><a href="index.html"><img src="images/cainiao.png" alt="logo" width="211" height="161" /></a></div>
+      <div class="logo"><a href="message.html"><img src="images/cainiao.png" alt="logo" width="211" height="161" /></a></div>
       <div class="search">
 	  <span class="Re_Lo">
 			<a href="register.html">注册</a>&nbsp;&nbsp;
@@ -80,12 +80,7 @@ function getButton(comNum)
       <h2>快递咨询</h2>
       <div class="clr"></div>
     </div>
-	<script type="text/javascript"> 
-		thisURL = document.URL; 
-		strwrite = "<img src='https://chart.googleapis.com/chart?cht=qr&chs=150x150&choe=UTF-8&chld=L|4&chl=" + thisURL + "' width='150' height='150' alt='网址URL 二维码生成' style='position: absolute; top: 322px; right: 8px;'/>";
-		document.write( strwrite ); 
-	
-</script>
+	<img alt="网址URL 二维码生成" src="images/consult2WEI.jpg" style="position: absolute; top: 322px; right: 8px;"/>
   </div>
   <div class="top_bg2">
    <div class="clr"></div>
@@ -103,9 +98,8 @@ function getButton(comNum)
 	<div class="select-content-address">
 	 <div class="select-content"> 
 	 <label>  请选择查询内容：  </label> <br/> <br />
-				<label><input name="info" type="radio" value="" name="content"/>快递热线 </label> 
-				<label><input name="info" type="radio" value="" name="content"/>价格信息 </label> 
-				<label><input name="info" type="radio" value="" name="content"/>投递点 </label> 
+				<label><input name="info" type="radio" value="" name="content"/>快递网点&nbsp;&nbsp;&nbsp; </label> 
+				<label><input name="info" type="radio" value="" name="content"/>价格信息&nbsp;&nbsp;&nbsp; </label> 
 				<label><input name="info" type="radio" value="" name="content"/>招聘信息 </label>
 				
 				
@@ -318,12 +312,6 @@ function showcity(province, CITYFIELD) {
 	CITYFIELD.options.length = 0;
 	for ( var i = 0; i < cityOptions.length; i++) {
 		CITYFIELD.options[i] = new Option(cityOptions[i], cityOptions[i]);
-		/*
-		 if (cityField.options[i].value==city)
-		 {
-		 //alert("here put City ok!");
-		 document.oblogform["city"].selectedIndex = i;
-		 }*/
 	}
 }
 

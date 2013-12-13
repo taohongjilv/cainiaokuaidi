@@ -21,18 +21,13 @@
 		<div class="header">
 			<div class="block_header">
 				<div class="logo">
-					<a href="index.html"><img src="images/cainiao.png" alt="logo"
+					<a href="message.html"><img src="images/cainiao.png" alt="logo"
 						width="211" height="161" /> </a>
 				</div>
 				<div class="search">
 					<span class="Re_Lo"> <a href="register.html">注册</a>&nbsp;&nbsp;
 						<a href="login.html">登陆</a><br> </span> <img
 						src="images/webName.png" alt="webName" width="469" height="71" />
-					<!--
-          <form id="form1" name="form1" method="post" action="">
-            <label></label>
-          </form>
-		-->
 				</div>
 				<div class="clr"></div>
 				<div class="clr"></div>

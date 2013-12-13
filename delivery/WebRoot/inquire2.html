@@ -1,0 +1,337 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>about</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<script language="javascript">
+
+var lastMouseDownButtonId = null;
+
+
+function setLucencyBackgroud(x)
+{
+	if (lastMouseDownButtonId != x)
+	document.getElementById(x).style.background = "none";
+}
+
+function setLightBackground(x)
+{
+    if (lastMouseDownButtonId != x)
+	document.getElementById(x).style.background = "#95E0EF";
+}
+
+function setBlueBackground(x)
+{
+	document.getElementById(x).style.background = "#0fcdf6";
+	
+	if (lastMouseDownButtonId != null)
+	{
+    	document.getElementById(lastMouseDownButtonId).style.background = "none";
+	}
+			
+	lastMouseDownButtonId = x;
+	document.getElementById("company").setAttribute("value", x);
+}
+	
+</script>
+
+
+
+
+
+<body>
+<div class="main">
+  <div class="header">
+    <div class="block_header">
+      <div class="logo"><a href="message.html"><img src="images/cainiao.png" alt="logo" width="211" height="161" /></a></div>
+      <div class="search">
+	  <span class="Re_Lo">
+			欢迎taohongjilv
+			<a href="inquire.html">注销</a>
+		</span>
+	  <img src="images/webName.png" alt="webName" width="469" height="71" />
+          <form id="form1" name="form1" method="post" action="">
+            <label></label>
+          </form>
+      </div>
+      <div class = "clr" > </div>
+      <div class="menu">
+        <ul>
+          <li><a href="message.html" ><span>信息资讯</span></a></li>
+          <li><a href="inquire.html" class="active"><span>快递查询</span></a></li>
+          <li><a href="consult.html" ><span>快递咨询</span></a></li>
+          <li><a href="question.html"><span>问题反馈</span></a></li>
+        </ul>
+        <div class="clr"></div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="slider_top">
+    <div class="header_text2">
+      <a href="#"><img src="images/zhuce.jpg" alt="picture" width="161" height="49" border="0" /></a>
+      <h2>快递查询</h2>
+      <div class="clr"></div>
+    </div>
+	
+  </div>
+  <div class="top_bg2">
+   <div class="clr"></div>
+  </div>
+  <div class="clr"></div>
+   <div class="body">
+    <div class="body_resize">
+	
+	
+	<div class="form_content">
+    <form id="test" action="courierResult.jsp" method="post">
+    <fieldset>
+        <legend>我的快递</legend>
+        <div class="form-row"  onMouseOver="getFocus(99)">
+            <div class="field-label"><label for="field1">请输入单号</label>:</div>
+            <div class="field-label"><input name="courier" id="field1" class="required"  /></div>
+			<div style="display:none"> <input name="company" id="company" />  </div>
+			
+			<div class="field-widge-submit"><input type="submit" class="submit" value="提交查询" /></div>
+			<label id="myDelivery" onClick="location.href='\mydelivery.html'">加入到我的快递</label>
+        </div>
+		
+		<div class="clr"></div>
+		<div class="company-frame">
+		
+		<div class="companyselect1"> 
+		<div class=companylabel> 
+		  <label>请选择下方快递公司： </label> </div>
+		
+		<div class="clr"> </div>
+		<div class="a-company-icon" id="ems" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"> <img src="images/shunfengicon.png" width="24" height="24" />  <p> <label> EMS </label>  </p></div>
+		
+		<div class="a-company-icon" id="shentong"  onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)" ><img src="images/yuantongicon.png" width="29" height="27" />
+		  <p> <label>申通 </label>  </p></div>
+		  
+		  <div class="a-company-icon" id="zhongtong"  onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"><img src="images/zhongtongicon.png" width="28" height="27" />
+		    <p> <label>中通 </label>  </p></div>
+		  <div class="a-company-icon" id="yunda"  onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"><img src="images/yundaicon.png" width="25" height="26" />
+		    <p> <label>韵达</label>  </p></div>
+		  <div class="a-company-icon" id="zhaijisong"  onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"><img src="images/zhaijisongicon.png" width="28" height="24" />
+		    <p> <label>宅急送</label>  </p></div>
+		  <div class="a-company-icon" id="youzhengbaoguo"  onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"><img src="images/youzhengbaoguoicon.png" width="25" height="28" />
+		    <p> <label> 邮政包裹 </label>  </p></div><div class="clr">  </div>
+		  
+		    <div class="a-company-icon" id="shunfeng" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  <img src="images/shunfeng1icon.png" width="26" height="32" />
+		      <p> <label> 顺丰 </label>  </p></div>
+		    <div class="a-company-icon" id="yuantong" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"><img src="images/yuantong1icon.png" width="26" height="27" />
+		      <p> <label> 圆通 </label>  </p></div>
+		    <div class="a-company-icon" id="huitong"  onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"><img src="images/huitongicon.png" width="27" height="26" />
+		      <p> <label>汇通</label>  </p></div>
+		    <div class="a-company-icon" id="tiantian"  onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"><img src="images/tiantianicon.png" width="27" height="26" />
+		      <p> <label>天天</label>  </p></div>
+		    <div class="a-company-icon" id="quanfeng"  onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"><img src="images/quanfengicon.png" width="27" height="27" />
+		      <p> <label>全峰</label>  </p></div>
+		    <div class="a-company-icon" id="fankepeisong"  onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"><img src="images/fankeicon.png" width="29" height="26" />
+		      <p> <label>凡客配送</label>
+		      </p></div>
+		    <div class="clr">  </div>
+			
+			<div class="company-left" > 
+			
+			
+			 <div class="a-company-in-left" > 
+			 	 <span> <label> <strong> B :  </strong> </label> 
+				 <div class="company-label" > 
+			     <label id="comId13"  onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  包邮平邮</label> </div>
+				 <div class="company-label" > <label id="comId44"  onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"> 邦送物流</label> </div>
+				</span>
+				 
+			 </div> 
+			 <div class="clr"> </div>
+			 
+			  
+			 <div class="a-company-in-left1" >
+			   <span> <label> <strong> D :  </strong> </label> 
+				 <div class="company-label" > 
+			     <label id="comId14"  onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  DHL</label> </div>
+				 <div class="company-label" > <label id="comId29"  onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"> 德邦物流</label> </div>
+				<div class="company-label" >  <label id="comId45"onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">   递四方</label>  </div></span>
+			 </div> 
+			 
+			 <div class="clr"> </div>
+			 
+			 
+			 <div class="a-company-in-left" > 
+			 	 <span> <label> <strong> E :  </strong> </label> 
+				 <div class="company-label" > 
+			     <label id="comId15" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">E邮宝</label> </div>
+				 <div class="company-label" > <label id="comId30" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">EMS国际</label> </div>
+				 </span> </div>
+			 <div class="clr"> </div>
+			 
+			 <div class="a-company-in-left1" >
+			   <span> <label> <strong> F :  </strong> </label> 
+				 <div class="company-label" > 
+			     <label id="comId16" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">FesEx</label> </div>
+				 <div class="company-label" > <label id="comId31" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">飞豹快递</label> </div>
+				<div class="company-label" >  <label id="comId46" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  飞康达</label>  
+				</div></span>
+			 </div>
+			 
+			 <div class="a-company-in-left" > 
+			 	 <span> <label> <strong> G :  </strong> </label> 
+				 <div class="company-label" > 
+			     <label id="comId17" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  挂号信</label> </div>
+				 <div class="company-label" > <label id="comId32" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">国通快递</label> </div>
+				<div class="company-label" >  <label id="comId47" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  能达速递</label>  </div>
+			 	 </span>
+				 
+			 </div> 
+			 <div class="clr"> </div>
+			 
+			  
+			 <div class="a-company-in-left1" >
+			   <span> <label> <strong> H :  </strong> </label> 
+				 <div class="company-label" > 
+			     <label id="comId18" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">汇通快运</label> </div>
+				 <div class="company-label" > <label id="comId33" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">华企快运</label> </div>
+				<div class="company-label" >  <label id="comId48" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  汇强快递</label>  </div></span>
+			 </div> 
+			 
+			 <div class="clr"> </div>
+			 
+			 
+			 <div class="a-company-in-left" > 
+			 	 <span> <label> <strong> J :  </strong> </label> 
+				 <div class="company-label" > 
+			     <label id="comId19" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  佳吉快运</label> </div>
+				 <div class="company-label" > <label onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"> 嘉里大通</label> </div>
+				<div class="company-label" >  <label id="comId49" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  急先达</label>  </div></span>
+				 
+			 </div> 
+			 
+			  <div class="clr"> </div>
+			 
+			 <div class="a-company-in-left1" >
+			   <span> <label> <strong> K :  </strong> </label> 
+				 <div class="company-label" > 
+			     <label id="comId20" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">快捷速递</label> </div>
+				 <div class="company-label" > <label id="comId35" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"> 跨越速递</label> </div>
+				</span> </div>
+			</div>
+			
+			
+			
+			
+			<div class="company-left" >
+			
+			<div class="a-company-in-left" > 
+			 	 <span> <label> <strong> L :  </strong> </label> 
+				 <div class="company-label" > 
+			     <label id="comId21" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  邦联快递</label> </div>
+				 <div class="company-label" > <label id="comId36" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"> 联昊通</label> </div>
+				<div class="company-label" >  <label id="comId50" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">   包邮平邮</label>  </div></span>
+				 
+			 </div> 
+			 <div class="clr"> </div>
+			 
+			  
+			 <div class="a-company-in-left1" >
+			   <span> <label> <strong> Q :  </strong> </label> 
+				 <div class="company-label" > 
+			     <label id="comId22" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">全峰快递</label> </div>
+				 <div class="company-label" > <label id="comId37" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"> 全晨快递</label> </div>
+				<div class="company-label" >  <label id="comId51" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">   全一快递</label>  </div></span>
+			 </div> 
+			 
+			 <div class="clr"> </div>
+			 
+			 
+			 <div class="a-company-in-left" > 
+			 	 <span> <label> <strong> S :  </strong> </label> 
+				 <div class="company-label" > 
+			     <label id="comId23" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  速尔快递</label> </div>
+				 <div class="company-label" > <label id="comId38" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"> 尚橙物流</label> </div>
+				 </span> </div>
+			 <div class="clr"> </div>
+			 
+			 <div class="a-company-in-left1" >
+			   <span> <label> <strong> T :  </strong> </label> 
+				 <div class="company-label" > 
+			     <label id="comId24" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  TNT</label> </div>
+				 <div class="company-label" > <label id="comId39" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"> 天地华宇</label> </div>
+				</span> </div>
+			 <div class="a-company-in-left" > 
+			 	 <span> <label> <strong> U :  </strong> </label> 
+				 <div class="company-label" > 
+			     <label id="comId25" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  USPS</label> </div>
+				 <div class="company-label" > <label id="comId40" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"> UPS</label> </div>
+				<div class="company-label" >  <label id="comId52" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">   优速物流</label>  </div></span>
+				 
+			 </div> 
+			 <div class="clr"> </div>
+			 
+			  
+			 <div class="a-company-in-left1" >
+			   <span> <label> <strong> X :  </strong> </label> 
+				 <div class="company-label" > 
+			     <label id="comId26" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  新邦物流</label> </div>
+				 <div class="company-label" > <label id="comId41" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"> 信丰物流</label> </div>
+				<div class="company-label" >  <label id="comId53" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  新蛋物流</label>  </div></span>
+			 </div> 
+			 
+			 <div class="clr"> </div>
+			 
+			 
+			 <div class="a-company-in-left" > 
+			 	 <span> <label> <strong> Y :  </strong> </label> 
+				 <div class="company-label" > 
+			     <label id="comId27" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  邮政国内</label> </div>
+				 <div class="company-label" > <label id="comId42" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"> 邮政国际</label> </div>
+				<div class="company-label" >  <label id="comId54" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">   银捷速递</label>  </div></span>
+				 
+			 </div> 
+			 
+			  <div class="clr"> </div>
+			 
+			 <div class="a-company-in-left1" >
+			   <span> <label> <strong> Z :  </strong> </label> 
+				 <div class="company-label" > 
+			     <label id="comId28" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">  中邮物流</label> </div>
+				 <div class="company-label" > <label id="comId43" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)"> 中铁物流</label> </div>
+				<div class="company-label" >  <label id="comId55" onMouseDown="setBlueBackground(this.id)" onMouseOver="setLightBackground(this.id)" onMouseOut="setLucencyBackgroud(this.id)">   中铁快运</label>  </div></span>
+			 </div></div>
+			
+			</div>
+		  </div>
+		
+		
+		
+		
+		
+		
+        
+        </fieldset>
+	</form>
+	</div>
+
+	
+	
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+  <div class="footer">
+  <div class="footer_resize">
+  <p class="leftt">© Copyright 2009. Your Site Name Dot Com. All Rights Reserved<br />
+    <a href="#">Home</a> | <a href="#">Contact</a> | <a href="#">RSS </a></p>
+    <p class="rightt"><a href="#">版权归菜鸟快递小组第11组</a></p>
+    <div class="clr"></div>
+  <div class="clr"></div>
+</div>
+</div>
+</div>
+
+
+</body>
+</html>
