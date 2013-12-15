@@ -43,6 +43,16 @@ function getButton(comNum)
 	}
 }
 	
+function handleRequest(){
+	var info = form2.info.value;
+	
+	if(form2.info[0].checked==true)
+	{
+        info = form2.info[0].value;
+		location.href="netpoint.html";
+	}
+	alert("您要查看的信息是:"+info);
+}
 </script>
 
 <body>
@@ -91,16 +101,16 @@ function getButton(comNum)
 	
 	
 	<div class="form_content">
-	<form>
+	<form name="form2" onsubmit="handleRequest()">
 	
 	
 	
 	<div class="select-content-address">
 	 <div class="select-content"> 
 	 <label>  请选择查询内容：  </label> <br/> <br />
-				<label><input name="info" type="radio" value="" name="content"/>快递网点&nbsp;&nbsp;&nbsp; </label> 
-				<label><input name="info" type="radio" value="" name="content"/>价格信息&nbsp;&nbsp;&nbsp; </label> 
-				<label><input name="info" type="radio" value="" name="content"/>招聘信息 </label>
+				<label><input name="info" type="radio" value="快递网点" name="content"/>快递网点&nbsp;&nbsp;&nbsp; </label> 
+				<label><input name="info" type="radio" value="价格信息" name="content"/>价格信息&nbsp;&nbsp;&nbsp; </label> 
+				<label><input name="info" type="radio" value="招聘信息" name="content"/>招聘信息 </label>
 				
 				
 			</div>
