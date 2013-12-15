@@ -441,3 +441,136 @@ float:left;
     position: absolute;
     right: 343px;
 }
+
+.u0 {
+	height: 50px;
+	padding: 10px;
+	margin: 10px;
+	border-bottom-width: 2px;
+	border-bottom-color: #EEEEEE;
+	border-bottom: 4px solid #ddd;
+}
+.text1 {
+	height: 25px;
+	margin: 2px;
+	float: left;
+	width: 137px;
+	padding: 4px 4px 4px 18px;
+	background-color: #E1ECEF;
+}
+.u1 {
+	height: 175px;
+	margin: 10px;
+	padding: 0 0 0 10px;
+	border-bottom: 4px solid #ddd;
+}
+.u2 {
+	width: 134px;
+	height: 135px;
+	padding: 20px 10px 10px 10px;
+	border-right: 4px solid #ddd;
+	background-color: #EFEFEF;
+	float: left;
+	border-left: 4px solid #ddd;
+}
+.text2 {
+	height: auto;
+}
+.u3 {
+	padding: 10px 10px 10px 10px;
+	height: 40px;
+}
+.text3 {
+	height: 20px;
+	padding: 10px;
+	margin: 2px;
+}
+.text4 {
+	height: 30px;
+	padding: 50px 10px 10px 10px;
+}
+.u4 {
+	width: 100px;
+	float: left;
+	height: 25px;
+	padding: 5px 10px 0 10px;
+	background: #0fcdf6;
+	color: #FFFFFF;
+	border: 1px #C3B5DF solid;
+}
+.u5 {
+		width: 270px;
+	float: left;
+	height: 25px;
+	padding: 5px 10px 0 10px;
+	background: #0fcdf6;
+	color: #FFFFFF;
+	border: 1px #C3B5DF solid;
+}
+.u6 {
+	width: 100px;
+	float: left;
+	height: 25px;
+	padding: 5px 10px 0 10px;
+	background: #0fcdf6;
+	color: #FFFFFF;
+	border: 1px #C3B5DF solid;
+}
+.u7 {
+
+	width: 100px;
+	float: left;
+	height: 25px;
+	padding: 5px 10px 0 10px;
+	background: #0fcdf6;
+	color: #FFFFFF;
+	border: 1px #C3B5DF solid;
+}
+
+
+.u8 {
+	width: 100px;
+	float: left;
+	height: 25px;
+	padding: 5px 10px 0 10px;
+	background: #ffffff;
+	color: #FFFFFF;
+	border: 1px #C3B5DF solid;
+}
+.u9 {
+		width: 270px;
+	float: left;
+	height: 25px;
+	padding: 5px 10px 0 10px;
+	background: #ffffff;
+	color: #FFFFFF;
+	border: 1px #C3B5DF solid;
+}
+.u10 {
+	width: 100px;
+	float: left;
+	height: 25px;
+	padding: 5px 10px 0 10px;
+	background: #ffffff;
+	color: #FFFFFF;
+	border: 1px #C3B5DF solid;
+}
+.u11 {
+
+	width: 100px;
+	float: left;
+	height: 25px;
+	padding: 5px 10px 0 10px;
+	background: #ffffff;
+	color: #FFFFFF;
+	border: 1px #C3B5DF solid;
+}
+
+
+.submit11 {
+	color:#FFFFFF;
+background-color:#0fcdf6;
+padding:6px 12px;
+cursor:pointer;
+border:none;
+}

@@ -44,14 +44,17 @@ function getButton(comNum)
 }
 	
 function handleRequest(){
-	var info = form2.info.value;
-	
-	if(form2.info[0].checked==true)
-	{
-        info = form2.info[0].value;
-		location.href="netpoint.html";
-	}
-	alert("您要查看的信息是:"+info);
+	 
+if(form2.info[0].checked==true)
+   window.open("netpoint.html"); 
+   
+   if(form2.info[1].checked==true)
+   window.open("price.html"); 
+   
+   if(form2.info[2].checked==true)
+   window.open("Recruitment.html"); 
+ 
+	//}
 }
 </script>
 
