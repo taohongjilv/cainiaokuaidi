@@ -56,6 +56,34 @@ if(form2.info[0].checked==true)
  
 	//}
 }
+
+function hide(button, x)
+{
+
+   if (button == 2)
+   {
+		document.getElementById(x).style.display = "inline";	
+   }
+	
+	else
+	{
+		document.getElementById(x).style.display = "none";	
+	}
+}
+
+
+
+function test()
+
+
+{
+
+alert("succcess");
+
+}
+		
+    
+
 </script>
 
 <body>
@@ -111,9 +139,9 @@ if(form2.info[0].checked==true)
 	<div class="select-content-address">
 	 <div class="select-content"> 
 	 <label>  请选择查询内容：  </label> <br/> <br />
-				<label><input name="info" type="radio" value="快递网点" name="content"/>快递网点&nbsp;&nbsp;&nbsp; </label> 
-				<label><input name="info" type="radio" value="价格信息" name="content"/>价格信息&nbsp;&nbsp;&nbsp; </label> 
-				<label><input name="info" type="radio" value="招聘信息" name="content"/>招聘信息 </label>
+				<label><input name="info" type="radio" value="快递网点" name="content" onclick="hide(1, 'u14')" id="="b1" />快递网点&nbsp;&nbsp;&nbsp; </label> 
+				<label><input name="info" type="radio" value="价格信息" name="content" onclick="hide(2, 'u14')" id="="b2" />价格信息&nbsp;&nbsp;&nbsp; </label> 
+				<label><input name="info" type="radio" value="招聘信息" name="content" onclick="hide(3, 'u14')" id="="b3" />招聘信息 </label>
 				
 				
 			</div>
@@ -122,8 +150,12 @@ if(form2.info[0].checked==true)
 				<div class="select-address"  onmouseover="getFocus(99)" >
 				  
 				  
+				  <div class="u13">
+				  
 				  <label> 
 				请选择地址：  </label>
+				
+				<div class="u14">
 				  <select id="userProvince" name="province" onchange="showcity(this.value, document.getElementById('userCity'));">
 				          <option value="">--请选择省份--</option>
 				          <option value="北京">北京</option>
@@ -162,6 +194,10 @@ if(form2.info[0].checked==true)
 				          <option value="台湾">台湾</option>
 				          <option value="海外">海外</option>
 	              </select>
+				  
+				  
+				  
+				  
 
 			      <script type="text/javascript" language="javascirpt">
 /**
@@ -332,9 +368,68 @@ function showcity(province, CITYFIELD) {
 		          <select id="userCity" name="city">
 		                  <option value=""></option>
                   </select>
+				
+				</div>
+				  
+				  
+				  <div class="u15" id="u14">
+				  
+				  <label>  到 </label>
+				  
+				  <select id="userProvince" name="province" onchange="showcity(this.value, document.getElementById('userCity1'));">
+				          <option value="">--请选择省份--</option>
+				          <option value="北京">北京</option>
+				          <option value="上海">上海</option>
+				          <option value="广东">广东</option>
+				          <option value="江苏">江苏</option>
+				          <option value="浙江">浙江</option>
+				          <option value="重庆">重庆</option>
+				          <option value="安徽">安徽</option>
+				          <option value="福建">福建</option>
+				          <option value="甘肃">甘肃</option>
+				          <option value="广西">广西</option>
+				          <option value="贵州">贵州</option>
+				          <option value="海南">海南</option>
+				          <option value="河北">河北</option>
+				          <option value="黑龙江">黑龙江</option>
+				          <option value="河南">河南</option>
+				          <option value="湖北">湖北</option>
+				          <option value="湖南">湖南</option>
+				          <option value="江西">江西</option>
+				          <option value="吉林">吉林</option>
+				          <option value="辽宁">辽宁</option>
+				          <option value="内蒙古">内蒙古</option>
+				          <option value="宁夏">宁夏</option>
+				          <option value="青海">青海</option>
+				          <option value="山东">山东</option>
+				          <option value="山西">山西</option>
+				          <option value="陕西">陕西</option>
+				          <option value="四川">四川</option>
+				          <option value="天津">天津</option>
+				          <option value="新疆">新疆</option>
+				          <option value="西藏">西藏</option>
+				          <option value="云南">云南</option>
+				          <option value="香港">香港特别行政区</option>
+				          <option value="澳门">澳门特别行政区</option>
+				          <option value="台湾">台湾</option>
+				          <option value="海外">海外</option>
+	              </select>
+				  
+				  
+				  <select id="userCity1" name="city">
+		                  <option value=""></option>
+                  </select>
+				  
+				  
+				  </div>
+				  
 		          </h2>
 				  
-				  <div class="field-widge-submit"><input type="submit" class="submit" value="提交查询" /></div>
+				  <div class="field-widge-submit"><input type="submit" class="submit11" value="提交查询" />
+				  </div>
+				  
+				  
+				  </div>
 			</div>
 		
 		</div>
